@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вставка мультимедіа та робота з canvas та SVG</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #2980B9, #6DD5FA);
+    color: #FFF;
+  }
+  #background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 0.5; /* змінюємо прозорість фонового відео */
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- Фонове відео -->
+<video id="background-video" autoplay muted loop>
+  <source src="Video/Car.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div class="container">
+  <h1>Мультимедійний контент та багатофункціональність</h1>
+
+  <!-- Вставка відео за допомогою тегу <video> -->
+  <video controls>
+    <source src="Video/Pedro.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Вставка відео за допомогою тегу <iframe> -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/abcdef123456" frameborder="0" allowfullscreen></iframe>
+
+  <!-- Вставка аудіо за допомогою тегу <audio> -->
+  <audio controls>
+    <source src="Audio/pedro.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Вставка карти за допомогою тегу <iframe> -->
+  <iframe src="map.html" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+  <!-- Посилання на різні частини зображення за допомогою тегів <map> та <area> -->
+  <img src="Photo/Photo.jpg" usemap="#image-map">
+  <map name="image-map">
+    <area shape="rect" coords="0,0,100,100" href="top-left.html" alt="Top Left">
+    <area shape="rect" coords="100,0,200,100" href="top-right.html" alt="Top Right">
+    <area shape="rect" coords="0,100,100,200" href="bottom-left.html" alt="Bottom Left">
+    <area shape="rect" coords="100,100,200,200" href="bottom-right.html" alt="Bottom Right">
+  </map>
+
+  <!-- Робота з canvas JavaScript -->
+  <canvas id="myCanvas" width="200" height="100"></canvas>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle = 'red';
+    context.fillRect(10, 10, 50, 50);
+  </script>
+
+  <!-- Робота з SVG -->
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+  </svg>
+</div>
+
+</body>
+</html>
+
